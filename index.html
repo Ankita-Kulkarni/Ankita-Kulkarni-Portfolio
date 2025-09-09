@@ -1,685 +1,774 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="I'm Ankita, and this is my personal portfolio website..">
-		<meta name="keywords" content="Ankita, Ankita Kulkarni, ankita ">
-        <!--==================== UNICONS ====================-->
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-        
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="./packages/css/swiper-bundle.min.css">
-        
-        <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="./packages/css/styles.css">
-		
-	<!--==================== Favicon ====================-->
-	<link rel="shortcut icon" href="./packages/images/favicon.png" type="images/png"> 
-
-	<!--==================== Animate on scroll CDN ====================-->
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-			
-	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
-	<title>Ankita Ajit Kulkarni</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-		<nav class="nav container">
-		<a href="#" class="nav__logo">Ankita Kulkarni</a>
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">
-                                <i class="uil uil-estate nav__icon"></i>Home
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">
-                                <i class="uil uil-user nav__icon"></i>About
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#skills" class="nav__link">
-                                <i class="uil uil-file-alt nav__icon"></i>Skills
-                            </a>
-                        </li>
-         
-                        <!--<li class="nav__item">
-                            <a href="#portfolio" class="nav__link">
-                                <i class="uil uil-scenery nav__icon"></i>Portfolio                                
-                            </a>
-                        </li> -->
-
-			<li class="nav__item">
-                            <a href="#certification" class="nav__link">
-                                <i class="uil uil-message nav__icon"></i>Certification                            
-                            </a>
-                        </li>
-			    
-			<!--<li class="nav__item">
-                            <a href="#blog" class="nav__link">
-                                <i class="uil uil-briefcase-alt nav__icon"></i>Blog
-                            </a>
-                        </li> -->
-                        
-			<li class="nav__item">
-                            <a href="#contact" class="nav__link">
-                                <i class="uil uil-message nav__icon"></i>Contact                            
-                            </a>
-                        </li>
-                    </ul>
-                    <i class="uil uil-times nav__close" id="nav-close"></i>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita Kulkarni - Software Developer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Arial, sans-serif' font-size='45' font-weight='bold' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .typing-animation { 
+            border-right: 2px solid #667eea; 
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #667eea; }
+        }
+        .skill-bar { transition: width 2s ease-in-out; }
+        .project-image { 
+            background: linear-gradient(45deg, #f0f9ff, #e0e7ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">AK</span>
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-gray-800">Ankita Kulkarni</span>
                 </div>
-                <div class="nav__btns">
-                    <!-- Theme change button -->
-
-                    <i class="uil uil-moon change-theme" id="theme-button"></i>
-
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="uil uil-apps"></i>
-                    </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Experience</a>
+                    <a href="#certifications" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Certifications</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Contact</a>
                 </div>
-            </nav>
-        </header>
-
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div data-aos="fade-left" class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <a href="https://www.linkedin.com/in/ankita-ajit-kulkarni" target="_blank" class="home__social-icon">
-                            <i class="fa fa-linkedin-square" style='font-size:24px'></i>
-                        </a>
-                        <a href="mailto:kulkarni2ankita@gmail.com" target="_blank" class="home__social-icon" >
-                          <i class="fa fa-envelope" style="font-size:22px;"></i>
-                        </a>
-                            <a href="https://www.salesforce.com/trailblazer/ankita-ajit-kulkarni" class="home__social-icon" target="_blank">
-                            <i class="fa fa-cloud" style="font-size:24px;"></i>
-                        </a>		
-						
-                    </div>
-
-                    <div data-aos="fade-right" class="home__img">
-                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-
-                                <image class="home__blob-img" x="15" y="15" href="./packages/images/main.png" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="home__data">
-                        <h1 class="home_title">Hi!<span class="wave">👋</span>, I'm Ankita</h1>
-                        <h3 class="home__subtitle">
-                            Application Development Associate @ Accenture 
-                        </h3>
-                        <p class="home__description"> Salesforce Developer </p>
-                        <a href="#contact" class="button button--flex">
-                            Contact me <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-		</div>
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </section>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-purple-600">About</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Experience</a>
+                <a href="#certifications" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Certifications</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-            <!--==================== ABOUT ====================-->
-		<section class="about section" id="about">
-            <h2 class="section__title">About Me</h2>
-            <span class="section__subtitle"> My Introduction</span>
-
-            <div data-aos="fade-left" class="about__container container grid">
-                <img src="./packages/images/main-1.png" alt="" class="about__img" />
-
-                <div class="about__data">
-                    <p class="about__description">
-                    Aspiring Salesforce Developer with 1.10 years of IT experience, including 1 year of hands-on project 
-					experience in Salesforce Development and Field Service Lightning (FSL). Proficient in configuration, 
-					Youreka form creation, and scheduling optimization. Looking to apply my technical expertise and 
-					problem-solving skills in a challenging Salesforce development role.
-			    
-	                </p>
-
-                    <div class="about__buttons"> 
-                        <a download="" href="packages/pdf/Ankita_Ajit_Kulkarni_SFDC.pdf" class="button button--flex" target="_blank">
-                            Download Resume <i class="uil uil-download-alt button__icon"></i>
-                        </a>
-                    </div>
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-20 pb-16 min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="w-40 h-40 mx-auto mb-6 bg-white rounded-full shadow-lg flex items-center justify-center">
+                    <span class="text-6xl">👩🏽‍💻</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+                    Hi, I'm Ankita Kulkarni
+                </h1>
+                <div class="text-2xl md:text-3xl text-purple-100 mb-8">
+                    <span id="typing-text" class="typing-animation">Salesforce Developer</span>
+                </div>
+                <p class="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+                    Application Development Associate @ Accenture
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('experience')" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        View My Experience
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                        Get In Touch
+                    </button>
                 </div>
             </div>
-        </section>
- 
- <!--==================== SKILLS ====================-->
-    <section class="skills section" id="skills">
-        <h2 class="section__title">Skills</h2>
-	<span class="section__subtitle">My technical level</span>
-            <div data-aos="fade-up" class="skills__container container grid">
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mt-12">
+                <a href="https://www.linkedin.com/in/ankita-ajit-kulkarni/" target="_blank" class="w-14 h-14 bg-white bg-opacity-20 rounded-lg flex items-center justify-center text-white hover:bg-opacity-30 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="mailto:kulkarni2ankita@gmail.com" target="_blank" class="w-14 h-14 bg-white bg-opacity-20 rounded-lg flex items-center justify-center text-white hover:bg-opacity-30 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                        <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                    </svg>
+                </a>
+                <a href="https://www.salesforce.com/trailblazer/ankita-ajit-kulkarni" target="_blank" class="w-14 h-14 bg-white bg-opacity-20 rounded-lg flex items-center justify-center text-white hover:bg-opacity-30 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.562 3.08c-1.154 0-2.09.936-2.09 2.09 0 .154.017.304.05.45-.95.17-1.67 1.01-1.67 2.01 0 1.154.936 2.09 2.09 2.09h7.116c.693 0 1.254-.561 1.254-1.254 0-.693-.561-1.254-1.254-1.254-.077 0-.152.007-.226.02-.347-.98-1.27-1.68-2.36-1.68-.462 0-.894.125-1.266.344-.372-.219-.804-.344-1.266-.344-.693 0-1.254.561-1.254 1.254 0 .077.007.152.02.226-.98.347-1.68 1.27-1.68 2.36 0 1.386 1.124 2.51 2.51 2.51h9.206c1.154 0 2.09-.936 2.09-2.09 0-1.154-.936-2.09-2.09-2.09-.154 0-.304.017-.45.05-.17-.95-1.01-1.67-2.01-1.67-1.154 0-2.09.936-2.09 2.09 0 .154.017.304.05.45-.95.17-1.67 1.01-1.67 2.01 0 1.154.936 2.09 2.09 2.09h3.558c.693 0 1.254-.561 1.254-1.254 0-.693-.561-1.254-1.254-1.254-.077 0-.152.007-.226.02-.347-.98-1.27-1.68-2.36-1.68-.462 0-.894.125-1.266.344-.372-.219-.804-.344-1.266-.344-.693 0-1.254.561-1.254 1.254 0 .077.007.152.02.226-.98.347-1.68 1.27-1.68 2.36 0 1.386 1.124 2.51 2.51 2.51h1.779c.693 0 1.254-.561 1.254-1.254 0-.693-.561-1.254-1.254-1.254z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
+                    <div class="w-80 h-80 mx-auto bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center text-8xl">
+                        🚀
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Passionate Developer & Problem Solver</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Aspiring Salesforce Developer with 1.10 years of IT experience, including 1 year of hands-on project experience in Salesforce Development and Field Service Lightning (FSL).
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                         Proficient in configuration, Youreka form creation, and scheduling optimization. Looking to apply my technical expertise and problem-solving skills in a challenging Salesforce development role.
+                    </p>
                     
-		<!--==================== SKILL 1 ====================-->
-                  <!--  <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="uil uil-brackets-curly skills__icon"></i>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">🎓 Education</h4>
+                            <p class="text-gray-600 text-sm">BE Computer Engineering<br>Savitribai Phule Pune University</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">📍 Location</h4>
+                            <p class="text-gray-600 text-sm">Pune, India<br></p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">💼 Experience</h4>
+                            <p class="text-gray-600 text-sm">1 Year<br>Salesforce Development</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">🌟 Focus</h4>
+                            <p class="text-gray-600 text-sm">Salesforce Administrator<br></p>
+                        </div>
+                    </div>
+                    
+                    <button onclick="downloadResume()" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        <a download="" href="Ankita_Ajit_Kulkarni_SFDC.pdf" target="_blank"> 
+                          Download Resume
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">My professional journey and key accomplishments</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div class="flex items-center mb-4 lg:mb-0">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold mr-4">
+                                SF
+                            </div>
                             <div>
-                                <h1 class="skills__title">Programming Languages</h1>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name"> Flows, Validation Rules, SOQL, Scheduling Policies, Scheduling Optimization, Youreka forms </h3>
-                                </div>
-
-                                <div class="skills__titles">
-                                    <h3 class="skills__name"> Apex </h3>
-                                </div>
+                                <h3 class="text-2xl font-semibold text-gray-900">Accenture</h3>
+                                <p class="text-lg text-purple-600 font-medium">Application Development Associate</p>
                             </div>
                         </div>
+                        <div class="text-right">
+                            <p class="text-gray-600 font-medium">Nov 2023 - Present</p>
+                            <p class="text-gray-500 text-sm">1+ years</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                          Salesforce Developer
+                        </p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                               Implementation of Custom objects, Users, Formula fields, Page Layout, Validation Rules, Page layouts, Lightning record page, Scheduling policies, Scheduling Optimization.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Youreka Forms: Form creation, Metadata creation and association.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Worked on Field Service Lightning cloud, FSL App.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Experience of Data Migration using Data Loader and Salesforce Inspector.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Salesforce</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">SOQL</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Youreka </span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">Field Service Lightning </span>
+                        <!-- <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">PostgreSQL</span> -->
+                    </div>
+                </div>
+
+              <!-- Experience 2 -->
+                 <!-- <div class="card-hover bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div class="flex items-center mb-4 lg:mb-0">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold mr-4">
+                                TI
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-900">Full-Stack Developer</h3>
+                                <p class="text-lg text-purple-600 font-medium">Tech Innovations Inc.</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-gray-600 font-medium">Mar 2020 - Dec 2021</p>
+                            <p class="text-gray-500 text-sm">1 year 10 months</p>
+                        </div> 
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Developed and maintained web applications for fintech clients. Collaborated with cross-functional teams to deliver high-quality software solutions on time and within budget.
+                        </p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Built responsive web applications using React and Vue.js for 15+ clients
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Integrated payment gateways and third-party APIs for e-commerce platforms
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Implemented automated testing reducing bug reports by 50%
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Collaborated with UX/UI designers to create intuitive user interfaces
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Vue.js</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Express.js</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">MongoDB</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Stripe</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">Docker</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">Jest</span>
+                    </div>
+                </div> --> 
+
+                <!-- Experience 3 -->
+                <!-- <div class="card-hover bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div class="flex items-center mb-4 lg:mb-0">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold mr-4">
+                                DS
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-900">Junior Software Developer</h3>
+                                <p class="text-lg text-purple-600 font-medium">Digital Solutions Ltd.</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-gray-600 font-medium">Jun 2019 - Feb 2020</p>
+                            <p class="text-gray-500 text-sm">9 months</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Started my professional journey as a junior developer, focusing on frontend development and learning industry best practices. Contributed to various client projects and internal tools.
+                        </p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Developed responsive websites using HTML, CSS, and JavaScript
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Assisted in migrating legacy applications to modern frameworks
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Participated in code reviews and learned agile development methodologies
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">•</span>
+                                Contributed to improving website performance and SEO optimization
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">jQuery</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Bootstrap</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">PHP</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">MySQL</span>
+                    </div>
+                </div> --> 
+            </div>
+        </div>
+        </div>
+    </section>
+
+<!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Certifications</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Professional certifications and achievements</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certification 1 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden bg-gray-100">
+                            <img src="SF-Certified_AI-Associate.png" alt="Salesforce AI Associate" class="w-full h-full object-cover rounded-xl" onerror="this.src=''; this.alt='Certificate Image'; this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold\'>🏆</div>';">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Salesforce AI Associate</h3>
+                        <p class="text-purple-600 font-medium mb-2">Salesforce</p>
+                        <p class="text-gray-500 text-sm">Issued: December 2024</p>
+                    </div>
+                    <div class="text-center">
+                        <!-- <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mb-4">Credential ID: PD1-2023-AK789</span> -->
+                        <button onclick="viewCertification('salesforce-ai-associate')" class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            View Certificate
+                        </button> 
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <!-- <div class="card-hover bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&crop=center" alt="AWS Developer Certificate" class="w-full h-full object-cover rounded-xl" onerror="this.src=''; this.alt='Certificate Image'; this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold\'>🏆</div>';">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">AWS Certified Developer</h3>
+                        <p class="text-purple-600 font-medium mb-2">Amazon Web Services</p>
+                        <p class="text-gray-500 text-sm">Issued: January 2023</p>
+                    </div>
+                    <div class="text-center">
+                        <!-- <span class="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full mb-4">Credential ID: AWS-DEV-2023-456</span> -->
+                        <!-- <button onclick="viewCertification('aws-developer')" class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            View Certificate
+                        </button>
+                    </div>
+                </div> --> 
+
+                <!-- Certification 3 -->
+                <!-- <div class="card-hover bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=200&h=200&fit=crop&crop=center" alt="Google Cloud Professional Certificate" class="w-full h-full object-cover rounded-xl" onerror="this.src=''; this.alt='Certificate Image'; this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold\'>🏆</div>';">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Google Cloud Professional</h3>
+                        <p class="text-purple-600 font-medium mb-2">Google Cloud Platform</p>
+                        <p class="text-gray-500 text-sm">Issued: November 2022</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full mb-4">Credential ID: GCP-PRO-2022-123</span>
+                        <button onclick="viewCertification('gcp-professional')" class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certification 4 -->
+                <!-- <div class="card-hover bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=200&fit=crop&crop=center" alt="React Developer Certificate" class="w-full h-full object-cover rounded-xl" onerror="this.src=''; this.alt='Certificate Image'; this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold\'>🏆</div>';">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">React Developer Certification</h3>
+                        <p class="text-purple-600 font-medium mb-2">Meta (Facebook)</p>
+                        <p class="text-gray-500 text-sm">Issued: September 2022</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mb-4">Credential ID: META-REACT-2022-789</span>
+                        <button onclick="viewCertification('meta-react')" class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certification 5 -->
+                <!-- <div class="card-hover bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&h=200&fit=crop&crop=center" alt="MongoDB Developer Certificate" class="w-full h-full object-cover rounded-xl" onerror="this.src=''; this.alt='Certificate Image'; this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold\'>🏆</div>';">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">MongoDB Developer</h3>
+                        <p class="text-purple-600 font-medium mb-2">MongoDB University</p>
+                        <p class="text-gray-500 text-sm">Issued: July 2022</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full mb-4">Credential ID: MONGO-DEV-2022-456</span>
+                        <button onclick="viewCertification('mongodb-developer')" class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certification 6 -->
+                <!-- <div class="card-hover bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop&crop=center" alt="Scrum Master Certificate" class="w-full h-full object-cover rounded-xl" onerror="this.src=''; this.alt='Certificate Image'; this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-red-500 to-orange-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold\'>🏆</div>';">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Scrum Master Certified</h3>
+                        <p class="text-purple-600 font-medium mb-2">Scrum Alliance</p>
+                        <p class="text-gray-500 text-sm">Issued: May 2022</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full mb-4">Credential ID: CSM-2022-321</span>
+                        <button onclick="viewCertification('scrum-master')" class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            View Certificate
+                        </button>
                     </div> --> 
-					
-					 <!--==================== SKILL 1 ====================-->
-                    <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-swatchbook skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__titles">Configuration</h1>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-					<div class="skills__titles">
-                                    <h3 class="skills__name"> Flow </h3>
-                                </div>
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">  Validation Rules </h3>
-                                </div>
-								<div class="skills__titles">
-                                    <h3 class="skills__name"> Scheduling Policies </h3>
-                                </div>
-								<div class="skills__titles">
-                                    <h3 class="skills__name"> Scheduling Optimization </h3>
-                                </div>
-								<div class="skills__titles">
-                                    <h3 class="skills__name">  Youreka forms  </h3>
-                                </div>
-								<div class="skills__titles">
-                                    <h3 class="skills__name">  SOQL  </h3>
-                                </div>
-                                                 						                            
-                            </div>
-                        </div>
-                    </div>
-									      
-       
-                    <!--==================== SKILL 2 ====================-->
-                    <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-swatchbook skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__titles">Data Migration Tools</h1>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-					<div class="skills__titles">
-                                    <h3 class="skills__name"> Data Loader </h3>
-                                </div>
-                                <div class="skills__titles">
-                                    <h3 class="skills__name"> Salesforce Inspector </h3>
-                                </div>
-                                                 						                            
-                            </div>
-                        </div>
-                    </div>
-
-				<!--==================== SKILL 3 ====================-->
-                    <div class="skills__content skills__close">
-                        <div class="skills__header">
-                              <i class="uil uil-cloud skills__icon"></i></i>
-
-                            <div>
-                                <h1 class="skills__titles">Cloud</h1>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-					<div class="skills__titles">
-                                    <h3 class="skills__name">  Field Service Lightning </h3>
-                                </div>
-                                                 						                            
-                            </div>
-                        </div>
-                    </div>
-					
-					
-        </section>
- 
-       <!--==================== PORTFOLIO ====================-->
-        <!-- <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Portfolio</h2>
-            <span class="section__subtitle">Most recent work</span>
-
-            <div data-aos="fade-right" class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper"> -->
-		<!--==================== PORTFOLIO 1 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/tab.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Dashboard and Story Visualization in Tablue</h3>
-                            <p class="portfolio__description">In Tablue, the data was visualized using different graphs such as bar graph, pie char, geographical graphs, etc. and numerical methods.</p>
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7097810155391651841/" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-                    <!--==================== PORTFOLIO 2 ====================-->
-                    <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/recommdy.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Recommendation Based Affiliate Marketing Mobile Application</h3>
-                            <p class="portfolio__description">We developed an application called "Recommdy" to connect publishers with affiliate marketers and
-							viewers with users. To gain an audience, affiliate marketers rely on their personal contacts and usual
-							followers.</p>
-                            <a href="./packages/pdf/ProjectReport.pdf" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-                    <!--==================== PORTFOLIO 3 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/face.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Human Face Recognition</h3>
-                            <p class="portfolio__description"> Face recognition involves identifying an already detected object as a known or unknown face. Face
-							Recognition on the other hand is to determine if the "face" is someone known, or unknown, using for
-							this purpose a database of faces to validate this input face.
-							</p>
-                            <a href="./packages/pdf/Human Face Recognition.pdf" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-                    <!--==================== PORTFOLIO 4 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/mnist.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Fashion MNIST using Deep Learning</h3>
-                            <p class="portfolio__description">Using MNIST Fashion Dataset to create a classifier to classify fashion clothing into categories. </p>
-                            <a href="https://www.kaggle.com/code/ankita2812/fashion-mnist-using-deep-learning" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-		<!--==================== PORTFOLIO 5 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/ocr.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">OCR letter recognition using Deep Learning</h3>
-                            <p class="portfolio__description">Using the OCR letter recognition dataset for Multiclass classification using Deep Neural Networks.
-							</p>
-                            <a href="https://www.kaggle.com/code/ankita2812/ocr-letter-recognition-using-deep-learning" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-					
-		<!--==================== PORTFOLIO 6 ====================-->
-                 <!--   <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/sentiment.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title"> IMDB sentiment analysis using Deep Learning</h3>
-                            <p class="portfolio__description">Using IMDB dataset for  Binary classification using Deep Neural Networks to classify movie reviews into positive" reviews and "negative" reviews, just based on the text content of the reviews.
-							</p>
-                            <a href="https://www.kaggle.com/code/ankita2812/imdb-sentiment-analysis-using-deep-learning" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-					
-		<!--==================== PORTFOLIO 7 ====================-->
-                  <!--  <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/email.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Email classification using the binary classification</h3>
-                            <p class="portfolio__description">Classify the email using the binary classification method.
-							</p>
-                            <a href="https://www.kaggle.com/code/ankita2812/classify-the-email-using-the-binary-classification" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-					
-		<!--==================== PORTFOLIO 8 ====================-->
-                  <!--  <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/chef.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Chef Junction</h3>
-                            <p class="portfolio__description">Developed an engaging website for Chef Junction, enabling app downloads and registration for home chefs.                       
-							</p>
-                            <a href="https://www.chefjunction.in/" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>		
-                </div> -->
-
-                <!-- Add Arrows -->
-               <!-- <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div> -->
-
-                <!-- Add Pagination -->
-               <!-- <div class="swiper-pagination"></div>
-            </div>
-        </section> -->
-
-<!--==================== Certificates ====================-->
-        <section class="certificate section" id="certification">
-            <h2 class="section__title">My Certificates</h2>
-            <span class="section__subtitle">My recent certification</span>
-            <div data-aos="fade-up" class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">                    
-
-	<!--==================== Certificate 1 ====================-->
-		<div class="portfolio__content grid swiper-slide">
-			<div class="portfolio_">
-			Salesforce Certified AI Associate <br> <h3 class="portfolio__title"> Salesforce </h3>
-			<div class="portfolio__data">
-                            <a href="https://drive.google.com/file/d/15KmQOjzcv4EUJJu86c3RsnTZDSkwzPml/view?usp=drivesdk" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Preview <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-			</div>
-		</div>
-	<!--==================== Certificate 2 ====================-->
-		<div class="portfolio__content grid swiper-slide">
-			<div class="portfolio_">
-			SAP S/4 HANA Materials Management, <br> <h3 class="portfolio__title"> Accenture </h3>
-			<div class="portfolio__data">
-                            <a href="https://drive.google.com/file/d/1U6ggZa1gJZTB4EhkXxhym8lADgzdqOw-/view?usp=drivesdk" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Preview <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-			</div>
-		</div>
-					
-	<!--==================== Certificate 3 ====================-->
-		<div class="portfolio__content grid swiper-slide">
-			<div class="portfolio_">
-			AWS Academy Machine Learning Foundations, <br> <h3 class="portfolio__title"> AWS </h3>
-			<div class="portfolio__data">
-                            <p></p>
-                            <a href="https://www.credly.com/badges/b7cedda4-5c33-4f6f-b0df-775cc7ced3d1/linked_in_profile" target="_blank"
-                                class="button button--flex button--small portfolio_-button">
-                                Preview  <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-			</div>
-		</div>
-					
-                <!--==================== Certificate 4 ====================-->
-		<div class="portfolio__content grid swiper-slide">
-			<div class="portfolio_">
-				Introduction to Data Science, <br> <h3 class="portfolio__title"> CISCO </h3>
-				<div class="portfolio__data">
-                            	<a href="https://www.credly.com/badges/ad89c133-a711-41d2-9a20-0965dae18fd5/public_url" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Preview <i class="uil uil-arrow-right button__icon"></i>
-                           	 </a>
-                        </div>
-			</div>
-		</div>
-
-	<!-- Add Arrows -->
-                <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div> 
-
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-			
-	 <!--==================== BLOG ====================-->
-        <!-- <section class="portfolio section" id="blog">
-            <h2 class="section__title">Blog</h2>
-            <span class="section__subtitle">My recent blogs</span>
-
-            <div data-aos="fade-right" class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">
-		<!--==================== BLOG 1 ====================-->
-                  <!--  <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/sf1.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Creating an Application in Salesforce.com using Apex programming Language</h3>
-                            <p class="portfolio__description">In this article, we discuss how to create an application for Salesforce using the Apex programming language and some important topics related to Salesforce. </p>
-                            <a href="" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Read
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-					
-					
-                    <!--==================== BLOG 4 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/blog1.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Introduction to NumPy</h3>
-                            <p class="portfolio__description">This article is on “Python for Machine Learning”. It tells about essential python packages and explains the data structures offered by NumPy.</p>
-                            <a href="https://medium.com/@kulkarni2ankita/introduction-to-numpy-10d5444ec930" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Read
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!--==================== BLOG 5 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/blog2.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Introduction to Pandas</h3>
-                            <p class="portfolio__description"> This article is on “Python for Machine Learning”. It tells about essential python packages and explains the data structures offered by Pandas. 
-							</p>
-                            <a href="https://medium.com/@kulkarni2ankita/introduction-to-pandas-d110878caa98" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Read
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!--==================== BLOG 6 ====================-->
-                   <!-- <div class="portfolio__content grid swiper-slide">
-                        <img src="./packages/images/blog3.png" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Introduction to Matplotlib</h3>
-                            <p class="portfolio__description"> This repository is on “Python for Machine Learning”. It tells about essential python packages and explains the data structures offered by Matplotlib.
-							</p>
-                            <a href="https://medium.com/@kulkarni2ankita/introduction-to-matplotlib-193c4e69623c" target="_blank" class="button button--flex button--small portfolio_-button">
-                                Read
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-					
-					
-                </div>
-
-
-                <!-- Add Arrows -->
-               <!-- <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div>
-
-                <!-- Add Pagination -->
-               <!-- <div class="swiper-pagination"></div>
-            </div>
-        </section>  -->
-
-        <!--==================== CONTACT ME ====================-->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contact me</h2>
-            <span class="section__subtitle">Get in touch</span>
-			<div data-aos="fade-left" class="about__container container grid">
-                <img src="./packages/images/main-2.png" alt="" class="contact__img"/>
-                <div>
-                    <div class="contact__information">
-                        <i class="uil uil-envelope contact__icon "></i>
-                        <!--home__social-->
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle"> kulkarni2ankita@gmail.com</span>
-                        </div>
-                    </div>
-                    
-		<div class="contact__information">
-                        <i class="uil uil-linkedin-alt contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">LinkedIn</h3>
-                            <span class="contact__subtitle">linkedin.com/in/ankita-ajit-kulkarni </span>
-                        </div>
-		</div>
-					
-		<div class="contact__information">
-                        <i class="uil uil-github-alt contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Github</h3>
-                            <span class="contact__subtitle">github.com/Ankita-Kulkarni</span>
-                        </div>
-                    </div>	
-		</div>
-                </div>
-        </section>
-    </main>
-
-    
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div>
-                    <h2 style="color: hsl(var(--hue-color), 8%, 95%);">Ankita Ajit Kulkarni</h2>
-                    <span class="footer__subtitle">Application Development Associate
-		    </span>
-                </div>
-
-                <ul class="footer__links">
-                    <li>
-                        <a href="#about" class="footer__link">About</a>
-                    </li>
-                    <li>
-                        <a href="#certification" class="footer__link">Certification</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer__link">Contact</a>
-                    </li>
-                </ul>
-                 <div class="footer__socials">
-                        <a href="https://www.linkedin.com/in/ankita-ajit-kulkarni" target="_blank" class="home__social-icon">
-                            <i class="fa fa-linkedin-square" style='font-size:24px'></i>
-                        </a>
-                        <a href="mailto:kulkarni2ankita@gmail.com" target="_blank" class="home__social-icon" >
-                          <i class="fa fa-envelope" style="font-size:22px;"></i>
-                        </a>
-                        <a href="https://www.salesforce.com/trailblazer/ankita-ajit-kulkarni" class="home__social-icon" target="_blank">
-                            <i class="fa fa-cloud" style="font-size:24px;"></i>
-                        </a>					
                 </div>
             </div>
-            <p class="footer__copy">&copy; 2025 Ankita Kulkarni | All Rights Reserved</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Technologies I work with to bring ideas to life</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- <h3 class="text-2xl font-semibold text-gray-900 mb-8 text-center">Tools & Technologies</h3> -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-700 border-b border-gray-200 pb-2">Configurations </h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Flows</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Validation Rules</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Scheduling Policies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Scheduling Optimization</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Youreka forms</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-700 border-b border-gray-200 pb-2">Database</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">SOQL</span>
+                                </div>
+                                <!-- <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Python</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">PostgreSQL</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">MongoDB</span>
+                                </div> --> 
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-700 border-b border-gray-200 pb-2">Data Migration Tools</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Data Loader </span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Salesforce Inspector</span>
+                                </div>
+                                <!-- <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">CI/CD</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Kubernetes</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-700 border-b border-gray-200 pb-2">Cloud</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Field Service Lightning</span>
+                                </div>
+                                <!--<div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Salesforce</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">VS Code</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Figma</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span class="text-gray-700">Analytics</span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Have a project in mind? Let's discuss how we can bring your ideas to life.</p>
+            </div>
+                        
+            <!-- Contact Info -->
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Get In Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Email</h4>
+                                    <p class="text-gray-600">kulkarni2ankita@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">LinkedIn</h4>
+                                    <p class="text-gray-600">linkedin.com/in/ankita-ajit-kulkarni/</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center">
+                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white font-bold text-xl">AK</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ankita Kulkarni</h3>
+                <p class="text-gray-400 mb-6">Salesforce Developer</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://www.linkedin.com/in/ankita-ajit-kulkarni/" target="_blank" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:kulkarni2ankita@gmail.com" target="_blank" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                            <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.salesforce.com/trailblazer/ankita-ajit-kulkarni" target="_blank" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8.562 3.08c-1.154 0-2.09.936-2.09 2.09 0 .154.017.304.05.45-.95.17-1.67 1.01-1.67 2.01 0 1.154.936 2.09 2.09 2.09h7.116c.693 0 1.254-.561 1.254-1.254 0-.693-.561-1.254-1.254-1.254-.077 0-.152.007-.226.02-.347-.98-1.27-1.68-2.36-1.68-.462 0-.894.125-1.266.344-.372-.219-.804-.344-1.266-.344-.693 0-1.254.561-1.254 1.254 0 .077.007.152.02.226-.98.347-1.68 1.27-1.68 2.36 0 1.386 1.124 2.51 2.51 2.51h9.206c1.154 0 2.09-.936 2.09-2.09 0-1.154-.936-2.09-2.09-2.09-.154 0-.304.017-.45.05-.17-.95-1.01-1.67-2.01-1.67-1.154 0-2.09.936-2.09 2.09 0 .154.017.304.05.45-.95.17-1.67 1.01-1.67 2.01 0 1.154.936 2.09 2.09 2.09h3.558c.693 0 1.254-.561 1.254-1.254 0-.693-.561-1.254-1.254-1.254-.077 0-.152.007-.226.02-.347-.98-1.27-1.68-2.36-1.68-.462 0-.894.125-1.266.344-.372-.219-.804-.344-1.266-.344-.693 0-1.254.561-1.254 1.254 0 .077.007.152.02.226-.98.347-1.68 1.27-1.68 2.36 0 1.386 1.124 2.51 2.51 2.51h1.779c.693 0 1.254-.561 1.254-1.254 0-.693-.561-1.254-1.254-1.254z"/>
+                      </svg>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">&copy; 2025 Ankita Kulkarni. All rights reserved. Built with passion and lots of coffee ☕</p>
+                </div>
+            </div>
         </div>
     </footer>
-    <!--==================== SCROLL TOP ====================-->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-    
 
-    <!--==================== SWIPER JS ====================-->
-    <script src="./packages/js/swiper-bundle.min.js"></script>
-
-    <!--==================== MAIN JS ====================-->
-    <script src="./packages/js/main.js"></script>
-    <!--=================== Animated text ===============-->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        var typed = new Typed(".auto-input", {
-            strings: [
-                "a Web Developer",
-                "an OS developer",
-                "a student",
-                "an UI Designer",
-            ],
-            typeSpeed: 100,
-            backSpeed: 100,
-            loop: true,
+        // Navigation functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Typing animation
+        const typingTexts = ['Salesforce Developer'];
+        let currentTextIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+
+        function typeText() {
+            const typingElement = document.getElementById('typing-text');
+            const currentText = typingTexts[currentTextIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+            }
+
+            if (!isDeleting && currentCharIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeText, typingSpeed);
+        }
+
+        // Start typing animation
+        typeText();
+
+        // Animate skill bars when in view
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.getAttribute('data-width');
+                        bar.style.width = width;
+                    }
+                });
+            });
+
+            skillBars.forEach(bar => observer.observe(bar));
+        }
+
+        // Initialize skill bar animation
+        animateSkillBars();
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['home', 'about', 'experience', 'certifications', 'skills', 'contact'];
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    current = section;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-purple-600');
+                link.classList.add('text-gray-700');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-gray-700');
+                    link.classList.add('text-purple-600');
+                }
+            });
+        });
+
+        // Certification functionality
+        function viewCertification(certId) {
+            const certifications = {
+                'salesforce-ai-associate': 'https://trailheadacademy.salesforce.com/my-learning/certifications/all',
+               // 'aws-developer': 'https://aws.amazon.com/certification/certified-developer-associate/',
+               // 'gcp-professional': 'https://cloud.google.com/certification/cloud-developer',
+               // 'meta-react': 'https://developers.facebook.com/certifications/',
+               // 'mongodb-developer': 'https://university.mongodb.com/certification',
+               // 'scrum-master': 'https://www.scrumalliance.org/get-certified'
+            };
+            
+            alert(`🏆 Opening ${certId} certification...\nThis would normally open: ${certifications[certId]}`);
+        }
+
+
+
+        // Additional interactive functions
+        function downloadResume() {
+            alert('📄 Resume opening! This would normally open Ankita_Ajit_Kulkarni_SFDC.pdf');
+        }
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
-
-    <!--=================== Animate scroll js ===============-->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            offset: 300,
-            duration: 2000
-        });
-    </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c74a32d29dff76',t:'MTc1NzQyNzI0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
